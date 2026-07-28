@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Livo Studio</title>
+  <meta name="description" content="Livo Studio makes thoughtful apps for the people who matter most.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:      #1E1930;
+      --surface: #2C2440;
+      --border:  rgba(221, 169, 78, 0.18);
+      --accent:  #DDA94E;
+      --text:    #EFE6D5;
+      --muted:   #8E86A0;
+      --faint:   #3A3058;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', system-ui, sans-serif;
+      font-size: 17px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrap {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* NAV */
+    nav {
+      padding: 36px 0 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-logo {
+      font-family: 'Fraunces', serif;
+      font-weight: 400;
+      font-size: 14px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .nav-link {
+      font-size: 14px;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .nav-link:hover { color: var(--text); }
+
+    /* HERO */
+    .hero {
+      padding: 96px 0 80px;
+    }
+
+    .hero-symbol {
+      display: block;
+      font-size: 32px;
+      color: var(--accent);
+      margin-bottom: 36px;
+      line-height: 1;
+    }
+
+    .hero-heading {
+      font-family: 'Fraunces', serif;
+      font-weight: 300;
+      font-size: clamp(44px, 9vw, 76px);
+      line-height: 1.06;
+      color: var(--text);
+      letter-spacing: -0.5px;
+      text-wrap: balance;
+      margin-bottom: 28px;
+    }
+
+    .hero-sub {
+      font-size: 18px;
+      color: var(--muted);
+      line-height: 1.65;
+      max-width: 460px;
+    }
+
+    /* DIVIDER */
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 72px 0;
+    }
+
+    /* SECTION LABEL */
+    .label {
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 32px;
+    }
+
+    /* ABOUT */
+    .about-text {
+      font-size: 17px;
+      color: var(--muted);
+      line-height: 1.8;
+      max-width: 540px;
+    }
+
+    .about-text strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    /* APP CARD */
+    .app-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 32px;
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+    }
+
+    .app-icon {
+      width: 60px;
+      height: 60px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      flex-shrink: 0;
+      color: var(--accent);
+    }
+
+    .app-name {
+      font-family: 'Fraunces', serif;
+      font-weight: 400;
+      font-size: 22px;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .app-desc {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .app-badge {
+      display: inline-block;
+      font-size: 11px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 1px solid rgba(221, 169, 78, 0.35);
+      border-radius: 20px;
+      padding: 4px 12px;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 56px 0 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 13px;
+      color: var(--faint);
+    }
+
+    footer a {
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    footer a:hover { color: var(--text); }
+
+    @media (max-width: 500px) {
+      .app-card { flex-direction: column; }
+      footer { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <nav>
+      <a class="nav-logo" href="/">Livo Studio</a>
+      <a class="nav-link" href="mailto:hello@livostudio.co">hello@livostudio.co</a>
+    </nav>
+
+    <section class="hero">
+      <span class="hero-symbol">✦</span>
+      <h1 class="hero-heading">Apps for the people who matter most.</h1>
+      <p class="hero-sub">Livo Studio is an independent app studio making small, thoughtful software for everyday life.</p>
+    </section>
+
+    <hr>
+
+    <section>
+      <p class="label">About</p>
+      <p class="about-text">
+        <strong>Livo Studio</strong> is a one-person studio based in Wyoming. We build apps that create space for the things worth making time for, conversation, connection, and the small rituals that hold people together.
+      </p>
+    </section>
+
+    <hr>
+
+    <section>
+      <p class="label">Apps</p>
+      <div class="app-card">
+        <div class="app-icon">✦</div>
+        <div>
+          <p class="app-name">Draw Closer</p>
+          <p class="app-desc">A daily conversation card app for couples, friends, and family. Two new questions each day. Tap to flip. Put the phone down and talk.</p>
+          <span class="app-badge">Coming soon to the App Store</span>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <span>© 2026 Livo Studio LLC</span>
+      <a href="mailto:hello@livostudio.co">hello@livostudio.co</a>
+    </footer>
+
+  </div>
+</body>
+</html>
